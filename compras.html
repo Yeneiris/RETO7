@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cafetería - Compras</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+
+header {
+    background: #1e1e1e;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a { color: white; margin: 0 15px; text-decoration: none; }
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.productos, .carrito {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+button {
+    background: #6d4c41;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.eliminar {
+    background: #c62828;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2>Tienda Café ☕</h2>
+    <p>👀 Visitas: <span id="visitas"></span></p>
+    <p>🛒 Productos en carrito: <span id="contadorCarrito"></span></p>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="acercade.html">Acerca de</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="compras.html">Compras</a>
+        </nav>
+       
+</header>
+
+<div class="container">
+
+    
+    <div class="productos">
+        <h3>Menú</h3>
+
+        
+        <select id="filtro" onchange="filtrarProductos()">
+            <option value="todos">Todos</option>
+            <option value="bebida">Bebidas</option>
+            <option value="comida">Comida</option>
+        </select>
+
+        <div id="listaProductos"></div>
+    </div>
+
+   
+    <div class="carrito">
+        <h3>Carrito</h3>
+        <ul id="listaCarrito"></ul>
+        <h4 id="total"></h4>
+        <button onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+
+</div>
+
+<script src="carrito.js"></script>
+
+</body>
+</html>
+
